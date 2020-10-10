@@ -1,8 +1,14 @@
 <template>
   <div id="app">
     My App
-    <router-link to="/">Home</router-link>
-    <router-link to="/about">About</router-link>
+    <ul class="nav nav-tabs">
+      <router-link tag="li" class="nav-item" to="/"
+        ><a class="nav-link">Home</a></router-link
+      >
+      <router-link tag="li" class="nav-item" to="/about"
+        ><a class="nav-link">About</a></router-link
+      >
+    </ul>
     <router-view />
   </div>
 </template>
@@ -15,12 +21,7 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 10px;
 }
 </style>
