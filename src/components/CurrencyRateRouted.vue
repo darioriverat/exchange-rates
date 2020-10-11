@@ -19,13 +19,12 @@
             v-for="(value, rate) in rates"
             :key="value"
           >
-            <button
-              type="button"
+            <router-link
+              tag="button"
               class="btn btn-link"
-              @click="$emit('currency-change', rate)"
+              :to="{ name: 'latest-currency', params: { currency: rate } }"
+              >{{ rate }}</router-link
             >
-              {{ rate }}
-            </button>
             <br />
             {{ value.toFixed(3) }}
           </div>

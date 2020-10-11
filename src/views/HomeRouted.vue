@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <currency-rate :currency="currency" @currency-change="updateCurrency" />
+    <currency-rate-routed :currency="currency" />
   </div>
 </template>
 
 <script>
-import CurrencyRate from "@/components/CurrencyRate.vue";
+import CurrencyRateRouted from "@/components/CurrencyRateRouted.vue";
 
 export default {
   data() {
@@ -15,11 +15,13 @@ export default {
     };
   },
   components: {
-    CurrencyRate,
+    CurrencyRateRouted,
   },
-  methods: {
-    updateCurrency(currency) {
-      this.currency = currency;
+  watch: {
+    $route() {
+      if (this.$route.params.currency) {
+        this.currency = this.$route.params.currency;
+      }
     },
   },
   created() {
