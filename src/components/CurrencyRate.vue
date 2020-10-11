@@ -1,5 +1,5 @@
 <template>
-  <teamplate>
+  <div>
     <h1 class="text-center mb-5">Exchange Rates Today</h1>
     <div class="row">
       <div class="col-sm-4 mb-2">
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-  </teamplate>
+  </div>
 </template>
 
 <script>
