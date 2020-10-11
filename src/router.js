@@ -3,7 +3,12 @@ import Router from "vue-router";
 import Home from "@/views/Home";
 import HomeRouted from "@/views/HomeRouted";
 import PageNotFound from "@/views/PageNotFound";
-import About from "@/views/About";
+
+const About = (resolve) => {
+  require.ensure(["@/views/About.vue"], () => {
+    resolve(require("@/views/About.vue"));
+  });
+};
 
 Vue.use(Router);
 
