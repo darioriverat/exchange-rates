@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    My App
     <ul class="nav nav-tabs">
       <router-link tag="li" class="nav-item" to="/"
         ><a class="nav-link">Home</a></router-link
