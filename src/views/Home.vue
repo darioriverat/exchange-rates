@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <currency-rate />
+    <currency-rate currency="USD" />
   </div>
 </template>
 

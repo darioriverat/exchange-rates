@@ -20,7 +20,7 @@
             :key="value"
           >
             {{ rate }} <br />
-            {{ value }}
+            {{ value.toFixed(3) }}
           </div>
         </div>
       </div>
@@ -30,20 +30,27 @@
 
 <script>
 export default {
+  props: {
+    currency: {
+      type: String,
+      default: "USD",
+    },
+  },
   data() {
     return {
-      currency: "",
       date: "",
       rates: {},
     };
   },
   created() {
-    this.$http.get("https://api.ratesapi.io/api/latest").then((res) => {
-      console.info(res);
-      this.currency = res.body.base;
-      this.date = res.body.date;
-      this.rates = res.body.rates;
-    });
+    console.log(this.currency);
+    this.$http
+      .get(`https://api.ratesapi.io/api/latest?base=${this.currency}`)
+      .then((res) => {
+        console.info(res);
+        this.date = res.body.date;
+        this.rates = res.body.rates;
+      });
   },
 };
 </script>
