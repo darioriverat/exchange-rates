@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import Home from "@/views/Home";
 import HomeRouted from "@/views/HomeRouted";
+import PageNotFound from "@/views/PageNotFound";
 import About from "@/views/About";
 
 Vue.use(Router);
@@ -23,6 +24,19 @@ export default new Router({
       path: "/about",
       name: "about",
       component: About,
+    },
+    {
+      path: "/currencies",
+      redirect: "/",
+    },
+    {
+      path: "/page-not-found",
+      name: "404",
+      component: PageNotFound,
+    },
+    {
+      path: "*",
+      redirect: "/page-not-found",
     },
   ],
 });
