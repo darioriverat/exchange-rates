@@ -3,14 +3,10 @@
     <h1 class="text-center mb-5">Exchange Rates Today</h1>
     <div class="row">
       <div class="col-sm-4 mb-2">
-        <div class="card" style="width: 18rem;">
-          <h1 class="currency text-center">{{ currency }}</h1>
-          <div class="card-body">
-            <p class="card-text text-center">
-              {{ date }}
-            </p>
-          </div>
-        </div>
+        <card :title="currency">
+          <div class="currency" slot="title">{{ currency }}</div>
+          <span>{{ date }}</span>
+        </card>
       </div>
       <div class="col-sm-8">
         <div class="row">
@@ -35,7 +31,12 @@
 </template>
 
 <script>
+import Card from "@/components/Card";
+
 export default {
+  components: {
+    Card,
+  },
   props: {
     currency: {
       type: String,
