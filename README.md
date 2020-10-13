@@ -1,6 +1,6 @@
 # Exchange Rates
 
-This is a basic Vue 2x project with API connection and tests.
+This is a basic Vue 2x + router project with API connection and unit tests.
 
 <p align="center">
   <img src="https://darioriverat.com/public/img/dist/exchange-rates.png" alt="Exchange Rates" />
